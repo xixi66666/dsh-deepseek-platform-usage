@@ -1,0 +1,73 @@
+{
+  "name": "dsh-deepseek-platform-usage",
+  "displayName": "平台用量",
+  "version": "0.1.3",
+  "description": "DeepSeek 开放平台账单用量面板 for DeepSeek Harness: daily tokens and cost per model / billing type / API key, plus hourly detail, synced from platform.deepseek.com.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "author": "YangChenxi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xixi66666/dsh-deepseek-platform-usage.git"
+  },
+  "homepage": "https://github.com/xixi66666/dsh-deepseek-platform-usage#readme",
+  "bugs": {
+    "url": "https://github.com/xixi66666/dsh-deepseek-platform-usage/issues"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "docs",
+    "cordis.patch.yml",
+    "client.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.0-rc.2 <0.3.0",
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    }
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "deepseek",
+    "platform-usage",
+    "billing",
+    "cost-tracking"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.2",
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check client.js && node --check lib/index.js && node --test"
+  }
+}

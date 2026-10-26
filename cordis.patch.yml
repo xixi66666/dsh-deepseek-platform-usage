@@ -1,0 +1,8 @@
+# dsh-deepseek-platform-usage bundle patch.
+#
+# One row is enough: the host's client-module scan resolves a row's specifier to
+# a PACKAGE ROOT and reads `dsh.client` from package.json, so the browser half
+# loads from the same row that mounts the host half.
+- insert:
+    - id: dsh-deepseek-platform-usage
+      name: dsh-deepseek-platform-usage

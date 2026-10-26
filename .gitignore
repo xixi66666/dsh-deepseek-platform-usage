@@ -1,0 +1,4 @@
+# 打包产物
+*.tgz
+# 依赖（本包自身无运行期依赖，测试用 node:test）
+node_modules/
